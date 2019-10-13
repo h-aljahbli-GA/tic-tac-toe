@@ -1,3 +1,7 @@
+
+main{
+    
+}
 /* main sections */
 header{
 
@@ -16,7 +20,7 @@ footer{
 
 /* others */
 #player-Turn{
-
+    
 }
 
 #player{
@@ -26,6 +30,7 @@ footer{
 #playground{  
     max-width: 650px;
     max-height: 650px;
+    border: 10px solid black;
 }
 #row1 {
     

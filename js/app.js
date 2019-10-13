@@ -22,7 +22,7 @@ const selectorArray = [$box1, $box2, $box3, $box4, $box5, $box6, $box7, $box8, $
 
 // this function changes the box to x or o based on madulo of moveNum
 const addPlay = function() {
-    // plays O then remove listner for played box
+    // plays O shows player going next, then remove listner for played box
     if (moveNum % 2 == 0) {
         $(this).text("O");
         $(this).addClass("o");
@@ -36,7 +36,7 @@ const addPlay = function() {
         }
         
     } else {
-        // plays X then remove listner for played box
+        // plays X, shows player going next, remove listner for played box
         $(this).text("X");
         $(this).addClass("x");
         $(this).off();
@@ -99,12 +99,6 @@ const removeRemainingListeners = function () {
 
 
 // click event listners
-$($box1).click(addPlay);
-$($box2).click(addPlay);
-$($box3).click(addPlay);
-$($box4).click(addPlay);
-$($box5).click(addPlay);
-$($box6).click(addPlay);
-$($box7).click(addPlay);
-$($box8).click(addPlay);
-$($box9).click(addPlay);
+for (let i = 0; i < selectorArray.length; i++) {
+    selectorArray[i].click(addPlay);
+}
