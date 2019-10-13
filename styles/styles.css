@@ -43,10 +43,12 @@ footer{
     text-align: center;
     font-size: 200px;
     line-height: 150px;
+    color: blue;
 }
 
 .o{
     text-align: center;
     font-size: 200px;
     line-height: 150px;
+    color: red;
 }
