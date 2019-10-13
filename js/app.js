@@ -12,9 +12,12 @@ const $box6 = $("#box6");
 const $box7 = $("#box7");
 const $box8 = $("#box8");
 const $box9 = $("#box9");
+const $player = $("#player")
 
 // array for selectors
 const selectorArray = [$box1, $box2, $box3, $box4, $box5, $box6, $box7, $box8, $box9]
+
+
 
 
 // this function changes the box to x or o based on madulo of moveNum
@@ -25,6 +28,9 @@ const addPlay = function() {
         $(this).addClass("o");
         $(this).off();
         moveNum += 1;
+        $($player).removeClass("o");
+        $($player).toggleClass("x");
+        $($player).text("X");
         if (moveNum > 5) {
             checkForWin()
         }
@@ -35,6 +41,9 @@ const addPlay = function() {
         $(this).addClass("x");
         $(this).off();
         moveNum += 1;
+        $($player).removeClass("x");
+        $($player).toggleClass("o");
+        $($player).text("O");
         if (moveNum > 5) {
             checkForWin()
         }
