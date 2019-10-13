@@ -1,5 +1,4 @@
-
-main{
+body{
     
 }
 /* main sections */
@@ -19,8 +18,8 @@ footer{
 
 
 /* others */
-#player-Turn{
-    
+#playerTurn{
+    margin: auto;
 }
 
 #player{
@@ -28,9 +27,11 @@ footer{
 }
 
 #playground{  
+    min-width: 650px;
     max-width: 650px;
-    max-height: 650px;
+    max-height: 700px;
     border: 10px solid black;
+    margin: auto;
 }
 #row1 {
     
@@ -46,7 +47,7 @@ footer{
 .box {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
+    border: 2px solid black;
     display: inline-block;
     overflow: hidden;
     margin: 5px;
@@ -66,3 +67,8 @@ footer{
     line-height: 200px;
     color: red;
 }
+
+#restart {
+    margin: auto;
+}
+
