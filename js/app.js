@@ -74,10 +74,14 @@ const checkForWin = function () {
         
         alert("O wins");
         removeRemainingListeners();
-    }    
+
+    } else if (moveNum == 10){
+        alert("DRAW!")
+    }
 }
 
 
+// function to remove any remaining listner in gameboard
 const removeRemainingListeners = function () {
     for (let i = 0; i < selectorArray.length; i++) {
         selectorArray[i].off();        
