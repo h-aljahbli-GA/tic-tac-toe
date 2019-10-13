@@ -24,11 +24,10 @@ footer{
 }
 
 #row2{
-    border-top:1px solid black;
-    border-bottom: 1px solid black;
+    border-top:5px solid black;
 }
 #row3{
-
+    border-top:5px solid black;
 }
 
 .box {
@@ -37,6 +36,7 @@ footer{
     border: 1px solid black;
     display: inline-block;
     overflow: hidden;
+    margin: 5px;
 
 }
 
