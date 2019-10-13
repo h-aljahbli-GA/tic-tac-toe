@@ -13,6 +13,9 @@ const $box7 = $("#box7");
 const $box8 = $("#box8");
 const $box9 = $("#box9");
 
+// array for selectors
+const selectorArray = [$box1, $box2, $box3, $box4, $box5, $box6, $box7, $box8, $box9]
+
 
 // this function changes the box to x or o based on madulo of moveNum
 const addPlay = function() {
@@ -42,34 +45,43 @@ const checkForWin = function () {
     // check rows
     if (($($box1).text() == 'X' && $($box2).text()=="X" && $($box3).text()=="X") || ($($box4).text() == 'X' && $($box5).text()=="X" && $($box6).text()=="X") || ($($box7).text() == 'X' && $($box8).text()=="X" && $($box9).text()=="X")) {
 
-        alert("X wins")
+        alert("X wins");
+        removeRemainingListeners();
        
     } else if (($($box1).text() == 'O' && $($box2).text()=="O" && $($box3).text()=="O") || ($($box4).text() == 'O' && $($box5).text()=="O" && $($box6).text()=="O") || ($($box7).text() == 'O' && $($box8).text()=="O" && $($box9).text()=="O")) {
 
         alert("O wins")
+        removeRemainingListeners();
 
      // check columns   
     } else if (($($box1).text() == 'X' && $($box4).text()=="X" && $($box7).text()=="X") || ($($box2).text() == 'X' && $($box5).text()=="X" && $($box8).text()=="X") || ($($box3).text() == 'X' && $($box6).text()=="X" && $($box9).text()=="X")) {
 
         alert("X wins")
-        
+        removeRemainingListeners();
 
     } else if (($($box1).text() == 'O' && $($box4).text()=="O" && $($box7).text()=="O") || ($($box2).text() == 'O' && $($box5).text()=="O" && $($box8).text()=="O") || ($($box3).text() == 'O' && $($box6).text()=="O" && $($box9).text()=="O")) {
         
-        alert("O wins")
+        alert("O wins");
+        removeRemainingListeners();
        
     // check diagonal
     } else if (($($box1).text() == 'X' && $($box5).text()=="X" && $($box9).text()=="X") || ($($box3).text() == 'X' && $($box5).text()=="X" && $($box7).text()=="X")) {
 
-        alert("X wins")
+        alert("X wins");
+        removeRemainingListeners();
 
     } else if (($($box1).text() == 'O' && $($box5).text()=="O" && $($box9).text()=="O") || ($($box3).text() == 'O' && $($box5).text()=="O" && $($box7).text()=="O")) {
         
-        alert("O wins")
-    }
+        alert("O wins");
+        removeRemainingListeners();
+    }    
+}
 
-    
-    
+
+const removeRemainingListeners = function () {
+    for (let i = 0; i < selectorArray.length; i++) {
+        selectorArray[i].off();        
+    }
 }
 
 
