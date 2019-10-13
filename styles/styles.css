@@ -1,0 +1,51 @@
+/* main sections */
+header{
+
+}
+
+main{
+    
+
+}
+
+footer{
+
+}
+
+
+
+/* others */
+#playground{  
+    max-width: 650px;
+    max-height: 650px;
+}
+#row1 {
+    
+}
+
+#row2{
+    border:1px solid black;
+}
+#row3{
+
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: inline-block;
+
+}
+
+.x {
+    text-align: center;
+    font-size: 200px;
+    line-height: 150px;
+}
+
+.o{
+    text-align: center;
+    font-size: 200px;
+    line-height: 150px;
+}
