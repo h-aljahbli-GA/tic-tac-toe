@@ -16,7 +16,21 @@ const $box9 = $("#box9");
 
 // this function changes the box to x or o based on madulo of moveNum
 const addPlay = function() {
-    $(this).css({"background-color": "yellow"})
+    // plays o
+    if (moveNum % 2 == 0) {
+        $(this).text("O");
+        $(this).addClass("o");
+        $(this).off();
+        moveNum += 1;
+        
+    } else {
+        // plays x
+        $(this).text("X");
+        $(this).addClass("x");
+        $(this).off();
+        moveNum += 1;
+
+    }
 }
 
 
