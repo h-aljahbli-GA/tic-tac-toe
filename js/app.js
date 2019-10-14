@@ -13,7 +13,7 @@ const $box7 = $("#box7");
 const $box8 = $("#box8");
 const $box9 = $("#box9");
 const $player = $("#player")
-const $restartButton = $(":button")
+const $restartButton = $("#restart")
 
 // array for selectors
 const selectorArray = [$box1, $box2, $box3, $box4, $box5, $box6, $box7, $box8, $box9]
@@ -99,7 +99,26 @@ const removeRemainingListeners = function () {
 }
 
 
+// function to reset gameboard
+const reset = function() {
+    for (let i = 0; i < selectorArray.length; i++) {
+        selectorArray[i].click(addPlay);
+        selectorArray[i].text("");
+        selectorArray[i].removeClass("o");
+        selectorArray[i].removeClass("x");
+    }
+    $player.removeClass("o");
+    $player.text("X");
+    $player.addClass("x");
+    moveNum = 1;
+}
+
+
 // click event listners
 for (let i = 0; i < selectorArray.length; i++) {
     selectorArray[i].click(addPlay);
 }
+
+
+// reset button event listner
+$($restartButton).click(reset);
