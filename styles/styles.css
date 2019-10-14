@@ -3,7 +3,8 @@ body{
 }
 /* main sections */
 header{
-
+    display: flex;
+    text-align: center;
 }
 
 main{
@@ -19,7 +20,16 @@ footer{
 
 
 
-/* others */
+/* header content */
+#playerOne{
+
+}
+
+#playerOneScore{
+
+}
+
+
 #playerTurn{
     margin: auto;
 }
@@ -28,6 +38,16 @@ footer{
 
 }
 
+#playerTwo{
+
+}
+
+#playerTwoScore{
+
+}
+
+
+/* main content */
 #playground{  
     min-width: 650px;
     max-width: 650px;
