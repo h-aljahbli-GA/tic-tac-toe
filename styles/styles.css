@@ -22,11 +22,12 @@ footer{
 
 /* header content */
 #playerOne{
+    font-size: 20px;
 
 }
 
 #playerOneScore{
-
+    font-size: 100px;
 }
 
 
@@ -39,11 +40,12 @@ footer{
 }
 
 #playerTwo{
+    font-size: 20px;
 
 }
 
 #playerTwoScore{
-
+    font-size: 100px;
 }
 
 
