@@ -63,51 +63,49 @@ const checkForWin = function () {
     // check rows
     if (($($box1).text() == 'X' && $($box2).text()=="X" && $($box3).text()=="X") || ($($box4).text() == 'X' && $($box5).text()=="X" && $($box6).text()=="X") || ($($box7).text() == 'X' && $($box8).text()=="X" && $($box9).text()=="X")) {
 
-        alert("X wins");
-        playerOneScore += 1;
-        $playerOneScore.text(playerOneScore);
-        removeRemainingListeners();
+        xEndGame();
        
     } else if (($($box1).text() == 'O' && $($box2).text()=="O" && $($box3).text()=="O") || ($($box4).text() == 'O' && $($box5).text()=="O" && $($box6).text()=="O") || ($($box7).text() == 'O' && $($box8).text()=="O" && $($box9).text()=="O")) {
 
-        alert("O wins")
-        playerTwoScore += 1;
-        $playerTwoScore.text(playerTwoScore);
-        removeRemainingListeners();
+        oEndGame();
 
      // check columns   
     } else if (($($box1).text() == 'X' && $($box4).text()=="X" && $($box7).text()=="X") || ($($box2).text() == 'X' && $($box5).text()=="X" && $($box8).text()=="X") || ($($box3).text() == 'X' && $($box6).text()=="X" && $($box9).text()=="X")) {
 
-        alert("X wins")
-        playerOneScore += 1;
-        $playerOneScore.text(playerOneScore);
-        removeRemainingListeners();
+        xEndGame();
 
     } else if (($($box1).text() == 'O' && $($box4).text()=="O" && $($box7).text()=="O") || ($($box2).text() == 'O' && $($box5).text()=="O" && $($box8).text()=="O") || ($($box3).text() == 'O' && $($box6).text()=="O" && $($box9).text()=="O")) {
         
-        alert("O wins");
-        playerTwoScore += 1;
-        $playerTwoScore.text(playerTwoScore);
-        removeRemainingListeners();
+        oEndGame();
        
     // check diagonal
     } else if (($($box1).text() == 'X' && $($box5).text()=="X" && $($box9).text()=="X") || ($($box3).text() == 'X' && $($box5).text()=="X" && $($box7).text()=="X")) {
 
-        alert("X wins");
-        playerOneScore += 1;
-        $playerOneScore.text(playerOneScore);
-        removeRemainingListeners();
+        xEndGame();
 
     } else if (($($box1).text() == 'O' && $($box5).text()=="O" && $($box9).text()=="O") || ($($box3).text() == 'O' && $($box5).text()=="O" && $($box7).text()=="O")) {
         
-        alert("O wins");
-        playerTwoScore += 1;
-        $playerTwoScore.text(playerTwoScore);
-        removeRemainingListeners();
+        oEndGame();
 
     } else if (moveNum == 10){
         alert("DRAW!")
     }
+}
+
+
+const xEndGame = function () {
+    alert("X wins");
+    playerOneScore += 1;
+    $playerOneScore.text(playerOneScore);
+    removeRemainingListeners();
+}
+
+
+const oEndGame = function () {
+    alert("O wins");
+    playerTwoScore += 1;
+    $playerTwoScore.text(playerTwoScore);
+    removeRemainingListeners();
 }
 
 
