@@ -100,13 +100,19 @@ footer{
     width: 200px;
 }
 
+#resetButton {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+
 #dialog{
     font-size: 40px;
-    height: 900px;
-    width: 900px;
     background-color: cornsilk;
     text-align: center;
     line-height: 200px;
+    border: 2px solid black;
     
 }
 

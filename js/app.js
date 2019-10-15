@@ -31,17 +31,19 @@ const $dialog = $( "#dialog" ).dialog({
     dialogClass: "no-close",
     buttons: [
         {
-          text: "OK",
+          text: "Play again",
+          id: "resetButton",
           click: function() {
+            reset()
             $( this ).dialog( "close" );
+
           }
         }
     ]
-
  });
 
 $( "#opener" ).click(function() {
-    $( "#dialog" ).dialog( "open" );
+    $(  ).dialog( "open" );
 });
   
 
