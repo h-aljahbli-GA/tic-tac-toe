@@ -170,6 +170,7 @@ const reset = function() {
     $player.text("X");
     $player.addClass("x");
     moveNum = 1;
+    $( $dialog ).dialog( "close" );
 }
 
 
