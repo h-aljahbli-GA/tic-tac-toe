@@ -35,6 +35,7 @@ const addPlay = function() {
     if (moveNum % 2 == 0) {
         $(this).text("O");
         $(this).addClass("o");
+        $(this).css("background-color", "");
         $(this).off();
         moveNum += 1;
         $($player).removeClass("o");
@@ -48,6 +49,7 @@ const addPlay = function() {
         // plays X, shows player going next, remove listner for played box
         $(this).text("X");
         $(this).addClass("x");
+        $(this).css("background-color", "");
         $(this).off();
         moveNum += 1;
         $($player).removeClass("x");
@@ -117,10 +119,21 @@ const removeRemainingListeners = function () {
 }
 
 
+// add hove effect
+const hoverOn = function () {
+    $(this).css("background-color", "yellow");
+}
+
+const hoverOff = function () {
+    $(this).css("background-color", "");
+}
+
+
 // function to reset gameboard
 const reset = function() {
     for (let i = 0; i < selectorArray.length; i++) {
         selectorArray[i].click(addPlay);
+        selectorArray[i].hover(hoverOn, hoverOff);
         selectorArray[i].text("");
         selectorArray[i].removeClass("o");
         selectorArray[i].removeClass("x");
@@ -132,11 +145,9 @@ const reset = function() {
 }
 
 
-// click event listners
-for (let i = 0; i < selectorArray.length; i++) {
-    selectorArray[i].click(addPlay);
-}
-
-
 // reset button event listner
 $($restartButton).click(reset);
+
+
+// start program
+reset()
