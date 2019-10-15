@@ -25,10 +25,23 @@ const $box9 = $("#box9");
 const $restartButton = $("#restart")
 
 
-// pop selector set to hide untill told to show
-const $dialog = $( "#dialog" ).dialog({ autoOpen: false });
+// popup selector set to hide untill told to show
+const $dialog = $( "#dialog" ).dialog({ 
+    autoOpen: false,
+    dialogClass: "no-close",
+    buttons: [
+        {
+          text: "OK",
+          click: function() {
+            $( this ).dialog( "close" );
+          }
+        }
+    ]
+
+ });
+
 $( "#opener" ).click(function() {
-  $( "#dialog" ).dialog( "open" );
+    $( "#dialog" ).dialog( "open" );
 });
   
 
