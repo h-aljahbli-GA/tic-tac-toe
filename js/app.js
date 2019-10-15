@@ -25,6 +25,13 @@ const $box9 = $("#box9");
 const $restartButton = $("#restart")
 
 
+// pop selector set to hide untill told to show
+const $dialog = $( "#dialog" ).dialog({ autoOpen: false });
+$( "#opener" ).click(function() {
+  $( "#dialog" ).dialog( "open" );
+});
+  
+
 // array for selectors
 const selectorArray = [$box1, $box2, $box3, $box4, $box5, $box6, $box7, $box8, $box9]
 
@@ -90,24 +97,30 @@ const checkForWin = function () {
         oEndGame();
 
     } else if (moveNum == 10){
-        alert("DRAW!")
+        $dialog.text("DRAW!!");
+        $dialog.dialog("open");
     }
 }
 
 
 const xEndGame = function () {
-    alert("X wins");
     playerOneScore += 1;
     $playerOneScore.text(playerOneScore);
     removeRemainingListeners();
+
+    $dialog.text("X wins!!");
+    $dialog.dialog("open");
 }
 
 
 const oEndGame = function () {
-    alert("O wins");
     playerTwoScore += 1;
     $playerTwoScore.text(playerTwoScore);
-    removeRemainingListeners();
+    removeRemainingListeners(); 
+
+
+    $dialog.text("O wins!!");
+    $dialog.dialog("open");
 }
 
 
