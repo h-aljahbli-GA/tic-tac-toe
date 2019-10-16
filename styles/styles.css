@@ -1,4 +1,5 @@
 body{
+    margin: auto;
     
 }
 
@@ -6,6 +7,8 @@ body{
 header{
     display: flex;
     text-align: center;
+    max-width: 650px;
+    margin: auto;
 }
 
 main{
@@ -118,5 +121,55 @@ footer{
 
 .no-close .ui-dialog-titlebar-close {
     display: none;
-  }
+}
   
+
+@media only screen and (max-width: 425px) {
+    body{
+        align-content: center;
+        margin:auto;
+    }
+    header{
+        max-width: 320px;
+        margin: auto;
+    }
+    main{
+        max-width: 320px;
+        min-width: 0px;
+        min-height: 0px;
+        margin: auto;
+    }
+
+    #playground{
+        min-width: 320px;
+        max-width: 320px;
+        border: 5px solid black;
+        margin: auto;
+    }
+
+    .box{
+        width: 100px;
+        height: 100px;
+        margin: 0px;
+    }
+    #row2{
+        border-top:0px solid black;
+    }
+    #row3{
+        border-top: 0px solid black;
+    }
+
+    .x{
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    .o{
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    #dialog{
+        font-size: 40px;
+    }
+}
