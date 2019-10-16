@@ -2,12 +2,16 @@
 let moveNum = 1;
 let playerOneScore = 0;
 let playerTwoScore = 0;
+let bot = false;
 
 
 // header selectors
 const $player = $("#player");
 const $playerOneScore = $("#playerOneScore");
 const $playerTwoScore = $("#playerTwoScore");
+
+const $human = $("#human");
+const $bot = $("#bot");
 
 
 // selector for boxes
@@ -31,7 +35,7 @@ const $dialog = $( "#dialog" ).dialog({
     dialogClass: "no-close",
     buttons: [
         {
-          text: "Play again",
+          text: "Play again!",
           id: "resetButton",
           click: function() {
             reset()
@@ -53,8 +57,11 @@ const selectorArray = [$box1, $box2, $box3, $box4, $box5, $box6, $box7, $box8, $
 
 // this function changes the box to x or o based on madulo of moveNum
 const addPlay = function() {
-    // plays O shows player going next, then remove listner for played box
-    if (moveNum % 2 == 0) {
+    // plays O shows player going next, then remove listner for played box    
+    if (bot === true && moveNum % 2 == 0) {
+        aiPlay();
+        
+    } else if (moveNum % 2 == 0) {
         $(this).text("O");
         $(this).addClass("o");
         $(this).css("background-color", "");
@@ -66,7 +73,6 @@ const addPlay = function() {
         if (moveNum > 5) {
             checkForWin()
         }
-        
     } else {
         // plays X, shows player going next, remove listner for played box
         $(this).text("X");
@@ -78,7 +84,7 @@ const addPlay = function() {
         $($player).toggleClass("o");
         $($player).text("O");
         if (moveNum > 5) {
-            checkForWin()
+            checkForWin();
         }
     }
 }
@@ -170,9 +176,51 @@ const reset = function() {
     $player.text("X");
     $player.addClass("x");
     moveNum = 1;
+    bot = false;
     $( $dialog ).dialog( "close" );
 }
 
+// random AI function
+// uses turn number to play its turn by random box and check if theres a text value in box else run function again
+const aiPlay = function () {
+    
+    let randomNumber = Math.floor(Math.random() * 8);         
+    
+    if (selectorArray[randomNumber].text() == "") {
+        $(selectorArray[randomNumber]).text("O");
+        $(selectorArray[randomNumber]).addClass("o");
+        $(selectorArray[randomNumber]).css("background-color", "");
+        $(selectorArray[randomNumber]).off();
+        moveNum += 1;
+        $($player).removeClass("o");
+        $($player).toggleClass("x");
+        $($player).text("X");
+
+        if (moveNum > 5) {
+            checkForWin()
+        }
+        
+    } else { 
+        if (moveNum == 10) {
+            return "gameover"
+        } else{
+            aiPlay();
+        }
+    
+    }
+}
+
+
+// event listner for bot or human
+$($bot).click(function () { 
+    reset();
+    bot = true;
+})
+
+$($human).click(function () {
+    reset();
+    bot = false;
+})
 
 // reset button event listner
 $($restartButton).click(reset);
